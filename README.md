@@ -17,6 +17,8 @@
 - resized image의 중앙부분을 crop(227x227x3)
 
 ### Architecture
-#### RelU
+#### ReLU
 - activation function을 기존 CNN에서 쓰이던 f(x) = tanh(x) 또는 sigmoid가 아닌 f(x) = max(0,x)를 사용
-- 기존 함수들은 vanishing gradient를 유발 할 수 있고 large datasets에서 RelU와 다른 함수와의 속도 차이가 크다.  
+- 기존 함수들은 vanishing gradient를 유발 할 수 있고 large datasets에서 ReLU와 다른 함수와의 속도 차이가 크다.  
+![KakaoTalk_20210514_130212144](https://user-images.githubusercontent.com/77203609/118219595-c3fa3600-b4b4-11eb-812d-d41ca4cf925b.png)
+-  ReLUs (solid line), tanh neurons(dashed line) CIFAR-10에 대하 6배 더 빠른 ReLU 
