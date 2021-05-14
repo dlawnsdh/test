@@ -7,7 +7,6 @@
 - AlexNet의 차별화된 기법으로 dropout, GPU 사용
 ### 결과
 - ILSVRC-2012에서 top-5 test error rate이 2위와 10.9%차이를 보였다.
-
 <br><br>
 
 ## Model
