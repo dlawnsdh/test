@@ -38,7 +38,9 @@
 ####  Data Augmentation
 - Overfitting을 줄이는 방법중 하나는 데이터를 늘리는 것인데 논문에서는 2가지 방법사용 : horizontal reflections, PCA on RGB pixel values
 1. horizontal reflections
- - 256x256으로 resized된 이미지들을 224x224의 size로 random crop한다.
+  - 256x256으로 resized된 이미지들을 224x224의 size로 random crop한다.
 2. PCA on RGB pixel values
- - RGB값을 갖는 pixel값 들의 3x3 공분산 행렬을 통해 PCA분석을 하면 eigenvector와 eigenvalue를 얻을 수 있다.
- 
+  - RGB값을 갖는 pixel값 들의 3x3 공분산 행렬을 통해 PCA분석을 하면 eigenvector와 eigenvalue를 얻을 수 있다.
+  ![KakaoTalk_20210514_135038924](https://user-images.githubusercontent.com/77203609/118222919-7634fc00-b4bb-11eb-8738-d16dc22112a8.png)
+  - 위와 같은 식으로 원본이미지 변경
+   
