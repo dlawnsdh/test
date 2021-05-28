@@ -1,13 +1,21 @@
-# ImageNet Classification with Deep Convolutional Neural Networks
+# Deep Residual Learning for Image Recognition
 
 ## Abstract
 
-- 1000개의 클래스의 1.2 million high-resilution image를 분류
-- 5개의 convolutional layers와 maxpooling layers, 3개의 fully connected layer 그리고 다클래스 분류를 위한 softmax function
-- AlexNet의 차별화된 기법으로 dropout, GPU 사용
+- Deep neural networks일수록 더 학습하기 어렵다는 점을 보완
+- residual(잔차)학습 개념을 도입
+- 함수를 새로 만드는 방법 대신에 residual function, 잔차 함수를 learing에 사용하는 것으로 layer를 재구성
+- empirical evidence showing 방법
+- VGG보다 8배 깊은 152 layers
 ### 결과
-- ILSVRC-2012에서 top-5 test error rate이 2위와 10.9%차이를 보였다.
+- ILSVRC-2015에서 3.57%의 error rate을 보이며 우승
 <br><br>
+
+## Introduction
+
+- 이 논문에서 다루는 문제는 Degradation Problem(network가 깊어질수록 accuracy가 떨어지는 문제, overfitting이 원인이 아니다)
+- residual mapping을 통해 degradation의 문제를 해결 가능하다.
+- 
 
 ## Model
 
