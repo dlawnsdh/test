@@ -20,12 +20,39 @@
 
 - 기존의 networks를 H(k)라 한다면, F(x) = H(x) - x, 즉 출력과 입력간의 차(residual mapping)에 대해 학습을하면 
   degradation의 문제를 해결 가능하다고 제시
-- H(x) = F(x) + x이므로 입력값에 출력값을 더하는 identity mapping을 수행하며, Shortcut Connections라고 불리는 방법이다.
+- H(x) = F(x) + x이므로 identity mapping을 수행하며, Shortcut Connections라고 불리는 방법이다.
 
-## Model
+## Deep Residual Learning
 
-### 데이터 전처리
-- 이미지들을 동일한 크기(256x256)으로 resize
+### Residual Learning
+- H(x) : underlying mapping to be fit by a few stacked layers(기존의 networks)
+- x : inputs
+- F(x) : H(x) - x
+- Stacked layer들이 H(x) 대신 residual function인 F(x)를 approximate 하는 것이 학습을 더 수월하게 한다.
+
+### Identity Mapping by Shortcuts
+- building block은 y = F(x, {Wi}) + x
+- x, y: input and output vectors of the layers
+- F(x, {Wi}): residual mapping to be learned
+- F + x 연산은 shortcut connection과 element-wise addition에 의해 수행된다.
+- 이때 F와 x의 차원이 같지 않으면 linear projection(Ws)을 수행해 차원을 맞춰준다.
+- 따라서 y = F(x, {Wi}) + Wsx
+
+### Network Architectures(Plain Network , Residual Network)
+![KakaoTalk_20210528_152214069](https://user-images.githubusercontent.com/77203609/119939416-d0a87f00-bfc8-11eb-9ac0-0545b0f55a83.png)
+
+- 가운데는 VGG기반 Plain Network, 오른쪽은 Plain Network에 기반한 Residual Network
+1. Plain Network
+  - Conv layers는 대부분 3X3 filters를 가지고 있다.
+  - 각 layers는 같은 크기의 output feature map을 가지고, 같은 수의 filters를 갖는다.
+  - feature map size가 반으로 줄어들었다면, time-complexity를 유지하기 위해 filters의 수는 두 배가 된다.
+  - downsampling을 하기 위해서 stride가 2인 conv layers를 통과시킨다. 
+  - 마지막엔 global average pooling과 1000-way-fully-connected layer with softmax
+  - VGG에 비해  filter의 수가 적고 lower complexity를 가진다는 것이 장점
+ 
+2. Residual Network
+  - Plain network에 기반하여, shortcut connections를 추가한 residual version ResNet
+  - Identity Shortcut은 input과 output을 같은 차원으로 맞춰줘야하는데 
 
 ### Architecture
 #### ReLU
