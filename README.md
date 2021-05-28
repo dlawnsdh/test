@@ -15,6 +15,7 @@
 
 - 이 논문에서 다루는 문제는 Degradation Problem(network가 깊어질수록 accuracy가 떨어지는 문제, overfitting이 원인이 아니다)
 - residual mapping을 통해 degradation의 문제를 해결 가능하다.
+
 ![KakaoTalk_20210528_144849074](https://user-images.githubusercontent.com/77203609/119936366-05660780-bfc4-11eb-80f3-17645786083c.png)
 -기존의 networks를 H(k)라 한다면, F(x) = H(x) - x, 즉 출력과 입력간의 차(residual mapping)에 대해 학습을하면 
  degradation의 문제를 해결 가능하다고 제시
