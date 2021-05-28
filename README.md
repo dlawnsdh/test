@@ -7,7 +7,7 @@
 - 함수를 새로 만드는 방법 대신에 residual function, 잔차 함수를 learing에 사용하는 것으로 layer를 재구성
 - empirical evidence showing 방법
 - VGG보다 8배 깊은 152 layers
-### 결과
+ ### 결과
 - ILSVRC-2015에서 3.57%의 error rate을 보이며 우승
 <br><br>
 
