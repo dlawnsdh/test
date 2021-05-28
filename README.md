@@ -17,8 +17,10 @@
 - residual mapping을 통해 degradation의 문제를 해결 가능하다.
 
 ![KakaoTalk_20210528_144849074](https://user-images.githubusercontent.com/77203609/119936366-05660780-bfc4-11eb-80f3-17645786083c.png)
--기존의 networks를 H(k)라 한다면, F(x) = H(x) - x, 즉 출력과 입력간의 차(residual mapping)에 대해 학습을하면 
- degradation의 문제를 해결 가능하다고 제시
+
+- 기존의 networks를 H(k)라 한다면, F(x) = H(x) - x, 즉 출력과 입력간의 차(residual mapping)에 대해 학습을하면 
+  degradation의 문제를 해결 가능하다고 제시
+- H(x) = F(x) + x이므로 입력값에 출력값을 더하는 identity mapping을 수행하며, Shortcut Connections라고 불리는 방법이다.
 
 ## Model
 
