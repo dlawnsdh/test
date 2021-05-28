@@ -13,7 +13,7 @@
 
 ## Introduction
 
-- 이 논문에서 다루는 문제는 Degradation Problem(network가 깊어질수록 accuracy가 떨어지는 문제, overfitting이 원인이 아니다)
+- 이 논문에서 다루는 문제는 Degradation Problem(network가 깊어질수록 accuracy가 떨어지는 문제, overfitting이 원인이 아니다.)
 - residual mapping을 통해 degradation의 문제를 해결 가능하다.
 
 ![KakaoTalk_20210528_144849074](https://user-images.githubusercontent.com/77203609/119936366-05660780-bfc4-11eb-80f3-17645786083c.png)
@@ -52,7 +52,19 @@
  
 2. Residual Network
   - Plain network에 기반하여, shortcut connections를 추가한 residual version ResNet
-  - Identity Shortcut은 input과 output을 같은 차원으로 맞춰줘야하는데 
+  - Identity Shortcut은 input과 output을 같은 차원으로 맞춰줘야 하는데 차원이 증가하면 두 가지 방법을 사용한다.
+    1. zero padding, 추가 파라미터는 없음
+    2. linear projection
+  - 위 두 가지 방법은 shortcut이 feature map을 2씩 건너뛰기 때문에 stride를 2로 사용한다.
+ 
+### Implementation
+-  ImageNet data에 적용
+-  image resized 224 * 224
+-  Batch normalization 사용
+-  SGD, mini batch 256
+-  learning rate는 0.1에서 시작해서 error가 local minimum에 빠질 때마다 1/10씩 나눠준다.
+-  Iteration 60 * 10^4, weight decay 0.0001, momentum 0.9, no dropout
+-  test에는 10-crop testing 적용
 
 ### Architecture
 #### ReLU
