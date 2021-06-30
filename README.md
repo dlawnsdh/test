@@ -36,6 +36,7 @@
 ### Feedforward Neural Net Language Model (NNLM)
 
 - input layer, projection layer, hidden layer, output layer로 구성
+
 ![nnlm1](https://user-images.githubusercontent.com/77203609/123915588-a1b46d00-d9bb-11eb-835c-6a6fcaa18ce2.png)
 
 - N: input word 개수
@@ -47,6 +48,7 @@
 - 각각의 input layer의 벡터들은 N x D 차원의 projection layer로 projection(embedding word vector를 만드는 과정)
 - projection layer에 가중치 행렬(D x H)를 곱핞 후 activation function에 넣어 hidden layer 생성(하나의 벡터로 축약)
 - hidden layer에서는 softmax와 CELoss사용하여 ouput에 대한 one-hot vector 생성
+
 
 - 전체 과정의 계산 복잡도
 - Q = N x D + N x D x H + H X V
@@ -62,6 +64,7 @@
 ###  Recurrent Neural Net Language Model (RNNLM)
 
 - input layer, hidden layer, output layer로 구성
+
 ![image](https://user-images.githubusercontent.com/77203609/123919682-230dfe80-d9c0-11eb-8797-0df22b036ead.png)
 
 - RNN을 사용한 Language Model
