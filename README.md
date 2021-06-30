@@ -44,17 +44,20 @@
 - D: word representation dimenstion
 - H: hidden layer size
 <br>
+
 - input layer에서 중심 단어의 이전 N개의 단어들의 one-hot encodeing을 수행하여 벡터화
 - 각각의 input layer의 벡터들은 N x D 차원의 projection layer로 projection(embedding word vector를 만드는 과정)
 - projection layer에 가중치 행렬(D x H)를 곱핞 후 activation function에 넣어 hidden layer 생성(하나의 벡터로 축약)
 - hidden layer에서는 softmax와 CELoss사용하여 ouput에 대한 one-hot vector 생성
 <br>
+
 - 전체 과정의 계산 복잡도
 - Q = N x D + N x D x H + H X V
 - 위 수식에서 가장 부하가 큰 연산은 hidden layer에서 output을 만드는 H x V 이지만 
   hierarchical softmax를 사용하여 H × log2V 로 연산량 감축
 - 따라서 가장 부하가 큰 연산은 projection layer에서 hidden layer를 만드는 연산인 N x D x H 이다.
 <br>
+
 - NNLM의 단점
  1. 파라미터 N이 고정되어 있고, 반드시 지정해야 한다.
  2. 중심 단어의 이전 단어만 고려하고 그 이후의 단어는 고려하지 못한다.
