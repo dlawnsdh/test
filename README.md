@@ -1,11 +1,12 @@
-# Deep Residual Learning for Image Recognition
+# Efficient Estimation of Word Representations in Vector Space
 
 ## Abstract
 
-- Deep neural networks일수록 더 학습하기 어렵다는 점을 보완
-- residual(잔차)학습 개념을 도입
-- 함수를 새로 만드는 방법 대신에 residual function, 잔차 함수를 learing에 사용하는 것으로 layer를 재구성
-- empirical evidence showing 방법
+- 단어의 벡터화
+- 단어를 하나의 작은 단위로 취급하고, one-hot encoding 방식을 사용하는 초기 NLP와는 다르게
+  단어의 유사도를 판별할 수 있는 distributed representation 방식을 사용  
+- 단어를 벡터화 하여 단어의 유사도를 측정하고, 수치적인 계산이 가능함
+- NNLM 보다 더 진화된 CBoW, skip-gram 방식 채용
 - VGG보다 8배 깊은 152 layers
 ###  결과
 - ILSVRC-2015에서 3.57%의 error rate을 보이며 우승
