@@ -22,8 +22,8 @@
 
 - word2vec의 수치적 연산 예시
 - word2vec.kr에서 여러가지 연산을 해볼 수 있다.
-
-### 계산 복잡도
+<br>
+## 계산 복잡도
 - 여러 모델을 비교하기위해 계산복잡도를 정의한다.
 - O = E x T x Q
 - E = training epochs, T = words in the training set, Q = defined further for each model architecture
