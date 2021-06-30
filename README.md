@@ -72,6 +72,7 @@
 - RNN을 사용한 Language Model
 - RNN 구조이므로 projection layer를 제거한다.
 - 고정된 갯수의 word를 input으로 받는 NNLM과 다르게 이전의 모든 word의 정보를 반복적으로 hidden layer에 담게 된다. 
+<br>
 
 - 전체 과정의 계산 복잡도
 - Q = H x H + H X V
