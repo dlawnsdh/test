@@ -6,23 +6,21 @@
 - 단어를 하나의 작은 단위로 취급하고, one-hot encoding 방식을 사용하는 초기 NLP와는 다르게
   단어의 유사도를 판별할 수 있는 distributed representation 방식을 사용  
 - 단어를 벡터화 하여 단어의 유사도를 측정하고, 수치적인 계산이 가능함
-- NNLM 보다 더 진화된 CBoW, skip-gram 방식 채용
-- VGG보다 8배 깊은 152 layers
+- 기존 모델 보다 더 진화된 CBoW, skip-gram 방식 채용
+- 구문과 의미론적인 측면에서 모두 높은 정확도를 보일 수 있도록 설계
 ###  결과
-- ILSVRC-2015에서 3.57%의 error rate을 보이며 우승
+- word2vec의 기존모델인 NNLM보다 속도와 정확도면에서 증가함 
 <br><br>
 
 ## Introduction
 
-- 이 논문에서 다루는 문제는 Degradation Problem(network가 깊어질수록 accuracy가 떨어지는 문제, overfitting이 원인이 아니다.)
-- residual mapping을 통해 degradation의 문제를 해결 가능하다.
-
-![KakaoTalk_20210528_144849074](https://user-images.githubusercontent.com/77203609/119936366-05660780-bfc4-11eb-80f3-17645786083c.png)
-
-- 기존의 networks를 H(k)라 한다면, F(x) = H(x) - x, 즉 출력과 입력간의 차(residual mapping)에 대해 학습을하면 
-  degradation의 문제를 해결 가능하다고 제시
-- H(x) = F(x) + x이므로 identity mapping을 수행하며, Shortcut Connections라고 불리는 방법이다.
-
+- 단어를 벡터화 함으로써 “King” - “Man” + “Woman” = “Queen” 와 같은 벡터 연산이 가능하다.
+- 이 논문에서 다루는 문제는 NNLM, RNNLM의 계산 복잡도(O)가 크다는 것
+- CBoW, skip-gram을 통해 계산 복잡도의 문제를 해결 가능하다.
+### 계산 복잡도
+- 여러 모델을 비교하기위해 계산복잡도를 정의한다.
+- O = E x T x Q
+- E = training epochs, T = words in the training set, Q = defined further for each model architecture
 ## Deep Residual Learning
 
 ### Residual Learning
