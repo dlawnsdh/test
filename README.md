@@ -18,6 +18,11 @@
 - 이 논문에서 다루는 문제는 NNLM, RNNLM의 계산 복잡도(O)가 크다는 것
 - CBoW, skip-gram을 통해 계산 복잡도의 문제를 해결 가능하다.
 
+![image](https://user-images.githubusercontent.com/77203609/123912308-d58d9380-d9b7-11eb-8aa1-2977bda30d37.png)
+
+- word2vec의 수치적 연산 예시
+- word2vec.kr에서 여러가지 연산을 해볼 수 있다.
+
 ### 계산 복잡도
 - 여러 모델을 비교하기위해 계산복잡도를 정의한다.
 - O = E x T x Q
