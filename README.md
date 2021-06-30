@@ -78,10 +78,15 @@
 - Q = H x H + H X V
 - NNLM과 동일하게 hierarchical softmax를 사용하여 H × log2V 로 연산량 감축할 수 있으므로
   가장 부하가 큰 연산은 H x H 이다.
-  
+<br>
+
 ## New Log-linear Models
----------------------------------
-![KakaoTalk_20210528_152214069](https://user-images.githubusercontent.com/77203609/119939416-d0a87f00-bfc8-11eb-9ac0-0545b0f55a83.png)
+
+###  Continuous Bag-of-Words Model (CBoW)
+<br>
+
+###  Continuous Skip-gram Model (skip-gram)
+<br>
 
 - 가운데는 VGG기반 Plain Network, 오른쪽은 Plain Network에 기반한 Residual Network
 1. Plain Network
