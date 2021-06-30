@@ -4,9 +4,9 @@
 
 - 단어의 벡터화
 - 단어를 하나의 작은 단위로 취급하고, one-hot encoding 방식을 사용하는 초기 NLP와는 다르게
-  단어의 유사도를 판별할 수 있는 distributed representation 방식을 사용  
+  단어의 유사도를 판별할 수 있는 distributed representation 방식을 사용하여 Embedding
 - 단어를 벡터화 하여 단어의 유사도를 측정하고, 수치적인 계산이 가능함
-- 기존 모델 보다 더 진화된 CBoW, skip-gram 방식 채용
+- 기존모델 보다 더 진화된 CBoW, skip-gram 방식 채용
 - 구문과 의미론적인 측면에서 모두 높은 정확도를 보일 수 있도록 설계
 ###  결과
 - word2vec의 기존모델인 NNLM보다 속도와 정확도면에서 증가함 
@@ -24,27 +24,57 @@
 - word2vec.kr에서 여러가지 연산을 해볼 수 있다.
 <br>
 
-## 계산 복잡도
-- 여러 모델을 비교하기위해 계산복잡도를 정의한다.
+## 학습 복잡도
+- 여러 모델을 비교하기위해 학습 복잡도를 정의한다.
 - O = E x T x Q
 - E = training epochs, T = words in the training set, Q = defined further for each model architecture
-## Deep Residual Learning
+- 추가로 모든 모델은 SGD와 backpropagation을 사용하여 학습한다.
+<br>
 
-### Residual Learning
-- H(x) : underlying mapping to be fit by a few stacked layers(기존의 networks)
-- x : inputs
-- F(x) : H(x) - x
-- Stacked layer들이 H(x) 대신 residual function인 F(x)를 approximate 하는 것이 학습을 더 수월하게 한다.
+##  Model Architectures
 
-### Identity Mapping by Shortcuts
-- building block은 y = F(x, {Wi}) + x
-- x, y: input and output vectors of the layers
-- F(x, {Wi}): residual mapping to be learned
-- F + x 연산은 shortcut connection과 element-wise addition에 의해 수행된다.
-- 이때 F와 x의 차원이 같지 않으면 linear projection(Ws)을 수행해 차원을 맞춰준다.
-- 따라서 y = F(x, {Wi}) + Wsx
+### Feedforward Neural Net Language Model (NNLM)
 
-### Network Architectures(Plain Network , Residual Network)
+- input layer, projection layer, hidden layer, output layer로 구성
+![nnlm1](https://user-images.githubusercontent.com/77203609/123915588-a1b46d00-d9bb-11eb-835c-6a6fcaa18ce2.png)
+
+- N: input word 개수
+- V: vocabulary size
+- D: word representation dimenstion
+- H: hidden layer size
+
+- input layer에서 중심 단어의 이전 N개의 단어들의 one-hot encodeing을 수행하여 벡터화
+- 각각의 input layer의 벡터들은 N x D 차원의 projection layer로 projection(embedding word vector를 만드는 과정)
+- projection layer에 가중치 행렬(D x H)를 곱핞 후 activation function에 넣어 hidden layer 생성(하나의 벡터로 축약)
+- hidden layer에서는 softmax와 CELoss사용하여 ouput에 대한 one-hot vector 생성
+
+- 전체 과정의 계산 복잡도
+- Q = N x D + N x D x H + H X V
+- 위 수식에서 가장 부하가 큰 연산은 hidden layer에서 output을 만드는 H x V 이지만 
+  hierarchical softmax를 사용하여 H × log2V 로 연산량 감축
+- 따라서 가장 부하가 큰 연산은 projection layer에서 hidden layer를 만드는 연산인 N x D x H 이다.
+
+- NNLM의 단점
+ 1. 파라미터 N이 고정되어 있고, 반드시 지정해야 한다.
+ 2. 중심 단어의 이전 단어만 고려하고 그 이후의 단어는 고려하지 못한다.
+ 3. 계산 복잡도가 높고 속도가 느리다.
+
+###  Recurrent Neural Net Language Model (RNNLM)
+
+- input layer, hidden layer, output layer로 구성
+![image](https://user-images.githubusercontent.com/77203609/123919682-230dfe80-d9c0-11eb-8797-0df22b036ead.png)
+
+- RNN을 사용한 Language Model
+- RNN 구조이므로 projection layer를 제거한다.
+- 고정된 갯수의 word를 input으로 받는 NNLM과 다르게 이전의 모든 word의 정보를 반복적으로 hidden layer에 담게 된다. 
+
+- 전체 과정의 계산 복잡도
+- Q = H x H + H X V
+- NNLM과 동일하게 hierarchical softmax를 사용하여 H × log2V 로 연산량 감축할 수 있으므로
+  가장 부하가 큰 연산은 H x H 이다.
+  
+## New Log-linear Models
+---------------------------------
 ![KakaoTalk_20210528_152214069](https://user-images.githubusercontent.com/77203609/119939416-d0a87f00-bfc8-11eb-9ac0-0545b0f55a83.png)
 
 - 가운데는 VGG기반 Plain Network, 오른쪽은 Plain Network에 기반한 Residual Network
