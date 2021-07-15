@@ -33,7 +33,7 @@
  
 - 하지만 입력 길이와 출력 길이의 연관성을 알 수 없을 때 RNN의 적용은 힘들다. 이를 해결하기 위해
   첫 번째 RNN으로 고정된 차원의 vector를 생성하고 두 번째 RNN에 입력으로 주어서 다른 sequence를 결과로 얻을 수 있는데
-  RNN은 long-term dependency를 잘 학습하지 못한다. LSTM을 사용하여 학습한다.
+  RNN은 long-term dependency를 잘 학습하지 못하므로 LSTM을 사용하여 학습한다.
 <br>
 
 - LSTM은 입력(x1,x2...xT)와 출력(y1,y2...yT')에 대해 조건부 확률을 예측하는 것을 목표로 한다. 
