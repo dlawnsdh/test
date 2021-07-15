@@ -40,7 +40,8 @@
   여기서 T와 T'은 다를 수 있다.
 - 입력에 대한 마지막 hidden state(encoder LSTM의 large fixed-dimensional vector representation)를 v라 하면 
   (y1,y2...yT')의 확률은 다음과 같다.
- ![image](https://user-images.githubusercontent.com/77203609/125728489-293f2647-291f-48fb-9a87-c63a38b50f39.png)
+  
+![image](https://user-images.githubusercontent.com/77203609/125729830-675bcfd4-6688-4b7c-865e-62c8ac0953dd.png)
 <br>
 
 ##  Model Architectures
