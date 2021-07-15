@@ -1,27 +1,29 @@
-# Efficient Estimation of Word Representations in Vector Space
+# Sequence to Sequence Learning with Neural Networks
 
 ## Abstract
 
-- 단어의 벡터화
-- 단어를 하나의 작은 단위로 취급하고, one-hot encoding 방식을 사용하는 초기 NLP와는 다르게
-  단어의 유사도를 판별할 수 있는 distributed representation 방식을 사용하여 Embedding
-- 단어를 벡터화 하여 단어의 유사도를 측정하고, 수치적인 계산이 가능함
-- 기존모델 보다 더 진화된 CBoW, skip-gram 방식 채용
-- 구문과 의미론적인 측면에서 모두 높은 정확도를 보일 수 있도록 설계
-###  결과
-- word2vec의 기존모델인 NNLM보다 속도와 정확도면에서 증가함 
+- DNN을 보완
+- 크기가 고정된 입력에 대해서만 데이터를 처리할 수 있다는 것이 DNN의 단점인데
+  두개의 LSTM을 사용하여 해결
+- 두개의 LSTM을 encoder와 decoder로 분류
+- 입력을 역순으로 배치하여 더 좋은 성능 발휘 
 <br><br>
 
 ## Introduction
 
-- 단어를 벡터화 함으로써 “King” - “Man” + “Woman” = “Queen” 와 같은 벡터 연산이 가능하다.
-- 이 논문에서 다루는 문제는 NNLM, RNNLM의 계산 복잡도(O)가 크다는 것
-- CBoW, skip-gram을 통해 계산 복잡도의 문제를 해결 가능하다.
+- 가변 차원의 입력 데이터를 다루기 위해 DNN대신 두개의 LSTM사용
+- 문장의 끝을 구분하기 위해 <EOS> 토큰 사용, <EOS>가 나올 때까지 입력을 받는다.
+- 첫 번째 LSTM은 입력을 순차적으로 받아서 마지막에 large fixed-dimensional vector representation 생성
+- 생성된 vector representation를 두 번재 LSTM의 입력으로 사용하여 output생성, 
+  decoder LSTM에서 나오는 결과는, input sequence에 의존적이다.
+- LSTM이 가변 길이의 입력에 대해서 고정된 길이의 vector representation을 생성할 수 있고,
+  Translation을 수행하기 위해서 어느정도의 paraphrasing(다른 말로 바꾸어 표현)을 수행하게 되는데, 
+  vector representation은 입력 문장의 의미를 paraphrased한 vector representation을 생성한다고 볼 수 있다. 
+  따라서 유사한 의미의 문장에 대해서 유사한 vector representation을 생성하게 된다. 
 
-![image](https://user-images.githubusercontent.com/77203609/123912308-d58d9380-d9b7-11eb-8aa1-2977bda30d37.png)
+![image](https://user-images.githubusercontent.com/77203609/125725545-347c14a3-f0ce-4756-a75c-f82b70813c12.png)
 
-- word2vec의 수치적 연산 예시
-- word2vec.kr에서 여러가지 연산을 해볼 수 있다.
+- ABC가 encoder LSTM에 입력되고 decoder LSTM에 의해 WXYZ라는 결과가 나옴, 각 문장의 끝은 <EOS>로 구분
 <br>
 
 ## 학습 복잡도
