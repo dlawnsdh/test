@@ -26,11 +26,21 @@
 - ABC가 encoder LSTM에 입력되고 decoder LSTM에 의해 WXYZ라는 결과가 나옴, 각 문장의 끝은 EOS로 구분
 <br>
 
-## 학습 복잡도
-- 여러 모델을 비교하기위해 학습 복잡도를 정의한다.
-- O = E x T x Q
-- E = training epochs, T = words in the training set, Q = defined further for each model architecture
-- 추가로 모든 모델은 SGD와 backpropagation을 사용하여 학습한다.
+## Model
+- 기존 RNN의 hidden state와 output을 구하는 식
+
+![image](https://user-images.githubusercontent.com/77203609/125728489-293f2647-291f-48fb-9a87-c63a38b50f39.png)
+ 
+- 하지만 입력 길이와 출력 길이의 연관성을 알 수 없을 때 RNN의 적용은 힘들다. 이를 해결하기 위해
+  첫 번째 RNN으로 고정된 차원의 vector를 생성하고 두 번째 RNN에 입력으로 주어서 다른 sequence를 결과로 얻을 수 있는데
+  RNN은 long-term dependency를 잘 학습하지 못한다. LSTM을 사용하여 학습한다.
+<br>
+
+- LSTM은 입력(x1,x2...xT)와 출력(y1,y2...yT')에 대해 조건부 확률을 예측하는 것을 목표로 한다. 
+  여기서 T와 T'은 다를 수 있다.
+- 입력에 대한 마지막 hidden state(encoder LSTM의 large fixed-dimensional vector representation)를 v라 하면 
+  (y1,y2...yT')의 확률은 다음과 같다.
+ ![image](https://user-images.githubusercontent.com/77203609/125728489-293f2647-291f-48fb-9a87-c63a38b50f39.png)
 <br>
 
 ##  Model Architectures
