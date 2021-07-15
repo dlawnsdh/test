@@ -66,6 +66,18 @@
 - 학습이 끝나면 위 식을 기반으로 translation결과를 생성한다.
 - translation과정에서는 left-to-right beam search decoder를 사용한다. 
 
+### Beam search algorithm
+
 ### Result
+
+![image](https://user-images.githubusercontent.com/77203609/125731919-f7ef77a3-3544-41d7-8789-eef0e0df8f5c.png)
+
+- sequence를 forward방향과 reverse방향으로 넣은 결과
+- Beam size가 클수록, 그리고 forward 대신 reverse순서로 넣을때 BLEU score가 더 높다. 
+- 문장을 역순으로 넣을때 Minimal Time Lag가 줄어든다는 결과를 보인다.
+
+![image](https://user-images.githubusercontent.com/77203609/125732104-d8757c93-3137-4a3d-8b64-d40c72cd1341.png)
+
+- 전반적으로 LSTM이 baseline에 비해서 높은 성능을 보이지만 35단어 이상의 길이를 넘기면 LSTM의 성능이 급격하게 감소한다.
 
 
