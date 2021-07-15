@@ -12,7 +12,7 @@
 ## Introduction
 
 - 가변 차원의 입력 데이터를 다루기 위해 DNN대신 두개의 LSTM사용
-- 문장의 끝을 구분하기 위해 <EOS> 토큰 사용, <EOS>가 나올 때까지 입력을 받는다.
+- 문장의 끝을 구분하기 위해 EOS 토큰 사용, EOS가 나올 때까지 입력을 받는다.
 - 첫 번째 LSTM은 입력을 순차적으로 받아서 마지막에 large fixed-dimensional vector representation 생성
 - 생성된 vector representation를 두 번재 LSTM의 입력으로 사용하여 output생성, 
   decoder LSTM에서 나오는 결과는, input sequence에 의존적이다.
@@ -23,7 +23,7 @@
 
 ![image](https://user-images.githubusercontent.com/77203609/125725545-347c14a3-f0ce-4756-a75c-f82b70813c12.png)
 
-- ABC가 encoder LSTM에 입력되고 decoder LSTM에 의해 WXYZ라는 결과가 나옴, 각 문장의 끝은 <EOS>로 구분
+- ABC가 encoder LSTM에 입력되고 decoder LSTM에 의해 WXYZ라는 결과가 나옴, 각 문장의 끝은 EOS로 구분
 <br>
 
 ## 학습 복잡도
