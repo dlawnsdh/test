@@ -162,7 +162,7 @@
 
 ![image](https://user-images.githubusercontent.com/77203609/131120243-47568ac1-d7dc-4abf-b990-1c3e3c708fec.png)
 
-- 참고 블로그
+- 참고 
 - https://rfriend.tistory.com/
 - https://scikit-learn.org/stable/
 - https://pandas.pydata.org/docs/reference/frame.html
