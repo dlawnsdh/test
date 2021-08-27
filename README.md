@@ -66,6 +66,61 @@
 - dataset = dataset.drop(["Temp9am"], axis = 1)
 - dataset = dataset.drop(["Temp3pm"], axis = 1)
 
-- 컬럼을 카테고리별로 분류
+### 컬럼을 카테고리별로 분류
 - num_col = dataset.select_dtypes(include='float64').columns 
 - obj_col = dataset.select_dtypes(include='object').columns
+
+### 날짜 분류
+
+- 원래 형태
+
+![image](https://user-images.githubusercontent.com/77203609/131085969-9b9f45ba-eb85-486d-8af6-c3075a546c27.png)
+
+- 년, 월, 일로 분리
+- dataset['Date'] = pd.to_datetime(dataset['Date'])
+- dataset['Year'] = dataset['Date'].dt.year
+- dataset['Month'] = dataset['Date'].dt.month
+- dataset['Day'] = dataset['Date'].dt.day
+- dataset.drop('Date',axis=1,inplace=True)
+- print(dataset['Year'], dataset['Month'], dataset['Day'], sep='\n')
+
+![image](https://user-images.githubusercontent.com/77203609/131086243-b1fdea17-2276-4692-884f-9803b149126a.png)
+
+### 결측치 보완
+
+- dataset[num_col].isnull().sum() #결측지 갯수 확인
+
+![image](https://user-images.githubusercontent.com/77203609/131086891-4beb9fe1-a982-4963-bd23-547ca0f6d7d4.png)
+
+- for i in num_col:
+-   dataset[i] = dataset[i].interpolate() #보간법으로 결측치 보완
+- 주어진 데이터를 이용하여 비어있는 부분을 채우는 방법
+
+![image](https://user-images.githubusercontent.com/77203609/131087159-556c0185-f343-44d9-81d2-0f6e7a2383c7.png)
+
+- Evaporation, Sunshine, Cloud3pm은 fillna()를 사용하여 보완
+- dataset['Evaporation'] = dataset['Evaporation'].fillna(method='bfill')  
+- dataset['Sunshine'] = dataset['Sunshine'].fillna(method='bfill')
+- dataset['Cloud3pm'] = dataset['Cloud3pm'].fillna(method='bfill')
+- dataset[num_col].isnull().sum()
+1. 앞 데이터를 사용하는 ffill method로는 결측지 제거가 안되고? bfill을 사용해야 제거된다.
+
+![image](https://user-images.githubusercontent.com/77203609/131087505-624af6e1-d433-4848-b83a-e01deb236436.png)
+
+- 오브젝트 카테고리의 데이터에도 결측치가 있지만 바람의 방향이나 비가 온다, 안 온다 등의 카테고리가 있어서 보간법으로의 결측치 보완이 어렵다.
+
+### num_col. obj_col 병합
+
+- dummy_col = obj_col
+- dataset = pd.get_dummies(dataset, columns = dummy_col)
+- dataset.columns
+
+![image](https://user-images.githubusercontent.com/77203609/131088266-d0e47960-561a-400a-ad55-5eca98f5b7ae.png)
+
+### 평가를 위한 데이터 분리
+
+- X = dataset.drop('RainTomorrow', axis=1)
+- Y = dataset['RainTomorrow']
+- X = StandardScaler().fit_transform(X) #정규화
+
+
