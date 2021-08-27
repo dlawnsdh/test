@@ -22,7 +22,17 @@
  ![image](https://user-images.githubusercontent.com/77203609/131076275-0db4838c-866c-4d22-980a-7bacec56f455.png)
  
  - 5행 23열(데이터셋 설명에 없는 열인 RISK_MM 제외)
- 
+ - dataset.info()
+
+![image](https://user-images.githubusercontent.com/77203609/131078892-97e406bc-ddc7-4cae-a4bd-f5b3131d28e8.png)
+
+- Dtype이 object형 7개 float형 16개
+- dataset.describe()
+
+![image](https://user-images.githubusercontent.com/77203609/131079332-5ba22565-8505-4638-b431-7ae3ef247f05.png)
+
+
+<br>
 ### 학습에 사용될 수 있도록 데이터 셋 조정
 
 - dataset["RainTomorrow"].replace({"Yes" : "1", "No" : "0"}, inplace = True) 
