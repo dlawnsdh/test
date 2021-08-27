@@ -37,7 +37,7 @@
 
 <br>
 
-### 학습에 사용될 수 있도록 데이터 셋 조정
+## 학습에 사용될 수 있도록 데이터 셋 조정
 
 - dataset["RainTomorrow"].replace({"Yes" : "1", "No" : "0"}, inplace = True) 
 1. #inplace=True 로 설정하면 원본이 변환된다
@@ -49,4 +49,23 @@
 
 ![image](https://user-images.githubusercontent.com/77203609/131077545-3ea49f11-96f2-4ecb-8d2c-a366b8219d05.png)
 
+- 숫자 데이터들의 상관관계 파악을 위한 시각화 플롯
+- plt.style.use("ggplot")
+- f,ax=plt.subplots(figsize = (10,8))
+- sns.heatmap(dataset.corr(), robust=True, fmt='.2f',linewidths=1.3, linecolor = 'gold', annot=True,); 
+1. corr(): 상관계수 구하는 함수
+2. 구해진 상관계수
 
+![image](https://user-images.githubusercontent.com/77203609/131081653-eba15052-a3c3-4693-84df-2d8202b97649.png)
+
+- 시각화 플롯
+
+![image](https://user-images.githubusercontent.com/77203609/131081748-aa83397e-3119-43a8-bb0d-b191fa25a6cf.png)
+
+- MinTemp, MaxTemp 말고는 다른 변수들과의 상관관계가 별로 없는 Temp9am, Temp3pm 열 삭제
+- dataset = dataset.drop(["Temp9am"], axis = 1)
+- dataset = dataset.drop(["Temp3pm"], axis = 1)
+
+- 컬럼을 카테고리별로 분류
+- num_col = dataset.select_dtypes(include='float64').columns 
+- obj_col = dataset.select_dtypes(include='object').columns
