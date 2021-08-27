@@ -23,8 +23,12 @@
  
 ### 학습에 사용될 수 있도록 데이터 셋 조정
 
-- dataset["RainTomorrow"].replace({"Yes" : "1", "No" : "0"}, inplace = True) #inplace=True 로 설정하면 원본이 변환된다
-- dataset.dropna(subset = ["RainTomorrow"], inplace = True) #RainTomorrow열에 NaN data 있는 경우 삭제 
-- dataset = dataset.astype({"RainTomorrow": int}) #RainTomorrow열을 숫자로 변환
-<br>
-- 
+- dataset["RainTomorrow"].replace({"Yes" : "1", "No" : "0"}, inplace = True) 
+1. #inplace=True 로 설정하면 원본이 변환된다
+- dataset.dropna(subset = ["RainTomorrow"], inplace = True) 
+1. #RainTomorrow열에 NaN data 있는 경우 삭제 
+- dataset = dataset.astype({"RainTomorrow": int}) 
+1. #RainTomorrow열을 숫자로 변환
+- dataset["RainTomorrow"]
+
+![image](https://user-images.githubusercontent.com/77203609/131077545-3ea49f11-96f2-4ecb-8d2c-a366b8219d05.png)
