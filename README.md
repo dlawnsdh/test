@@ -128,3 +128,41 @@
 
 ### AUC 그래프
 
+- C = [0.001, 0.01, 1, 100, 1000, 10000] 
+- auc_train=[]
+- auc_cv=[]
+-
+- #AUC 그래프
+- for c in C:
+-   lr = LogisticRegression(C=c) #C : 정규화 강도 값이 작을수록 강력한 정규화
+-   lr.fit(X_train,Y_train)
+-
+-    prob_cv = lr.predict_proba(X_cv)[:,1] #auc를 계산하기 위한 확률값
+-    auc_cv.append(roc_auc_score(Y_cv, prob_cv)) 
+
+-    prob_train = lr.predict_proba(X_train)[:,1]
+-    auc_train.append(roc_auc_score(Y_train, prob_train))
+
+- optimal_c = C[auc_cv.index(max(auc_cv))] #auc_cv 가장 높은 확률값들 저장
+- C = [math.log(x) for x in C] #converting values of C into logarithm
+
+- fig = plt.figure()
+- ax = plt.subplot(111)
+- ax.plot(C, auc_train, label="AUC train")
+- ax.plot(C, auc_cv, label="AUC CV")
+- plt.title("AUC")
+- plt.xlabel('C')
+- plt.ylabel("AUC")
+- ax.legend()
+- plt.show()
+
+![image](https://user-images.githubusercontent.com/77203609/131120162-e6cf1fdb-21e3-4d6d-acd2-ce4b0d96a604.png)
+
+- accuracy
+
+![image](https://user-images.githubusercontent.com/77203609/131120243-47568ac1-d7dc-4abf-b990-1c3e3c708fec.png)
+
+- 참고 블로그
+- https://rfriend.tistory.com/
+- https://scikit-learn.org/stable/
+- https://pandas.pydata.org/docs/reference/frame.html
