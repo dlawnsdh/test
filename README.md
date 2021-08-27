@@ -19,9 +19,9 @@
  
  ![image](https://user-images.githubusercontent.com/77203609/131076170-7ed1b501-23ef-45f3-ade9-1429a67c6bbe.png)
  
- ![image](https://user-images.githubusercontent.com/77203609/131076275-0db4838c-866c-4d22-980a-7bacec56f455.png)
+ ![image](https://user-images.githubusercontent.com/77203609/131079544-ed38c7f6-412e-4f65-b74b-67d76f6926ee.png)
  
- - 5행 23열(데이터셋 설명에 없는 열인 RISK_MM 제외)
+ - 5행 23열
  - dataset.info()
 
 ![image](https://user-images.githubusercontent.com/77203609/131078892-97e406bc-ddc7-4cae-a4bd-f5b3131d28e8.png)
