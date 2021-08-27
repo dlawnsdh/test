@@ -29,7 +29,7 @@
 - Dtype이 object형 7개 float형 16개
 - dataset.describe()
 
-![image](https://user-images.githubusercontent.com/77203609/131079332-5ba22565-8505-4638-b431-7ae3ef247f05.png)
+![image](https://user-images.githubusercontent.com/77203609/131079656-00dafe8b-2fd0-48eb-82ce-127722077db7.png)
 
 
 <br>
