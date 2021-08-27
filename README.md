@@ -111,6 +111,7 @@
 
 ### num_col. obj_col 병합
 
+- 수치화된 데이터를 가변수화 하여 합친다.
 - dummy_col = obj_col
 - dataset = pd.get_dummies(dataset, columns = dummy_col)
 - dataset.columns
@@ -122,5 +123,8 @@
 - X = dataset.drop('RainTomorrow', axis=1)
 - Y = dataset['RainTomorrow']
 - X = StandardScaler().fit_transform(X) #정규화
+- X_1, X_test, Y_1, Y_test = train_test_split(X, Y, test_size=0.3, stratify=Y)
+- X_train, X_cv, Y_train, Y_cv = train_test_split(X_1, Y_1, test_size=0.3, stratify=Y_1)
 
+### AUC 그래프
 
