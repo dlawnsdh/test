@@ -13,4 +13,9 @@
 
 ## Rain in Australia 데이터 셋
 
-- 
+- 데이터 셋의 구성
+- dataset = pd.read_csv('/content/drive/MyDrive/weatherAUS.csv')
+  dataset.head()
+ 
+ ![image](https://user-images.githubusercontent.com/77203609/131076170-7ed1b501-23ef-45f3-ade9-1429a67c6bbe.png)
+ 
