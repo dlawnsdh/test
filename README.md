@@ -31,6 +31,7 @@
 
 ![image](https://user-images.githubusercontent.com/77203609/131079656-00dafe8b-2fd0-48eb-82ce-127722077db7.png)
 
+![image](https://user-images.githubusercontent.com/77203609/131079701-ea3a5dbf-23ea-42af-bc3c-97b2dced7fdd.png)
 
 <br>
 ### 학습에 사용될 수 있도록 데이터 셋 조정
