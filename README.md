@@ -21,7 +21,7 @@
  
  ![image](https://user-images.githubusercontent.com/77203609/131076275-0db4838c-866c-4d22-980a-7bacec56f455.png)
  
- - 5행 23열
+ - 5행 23열(데이터셋 설명에 없는 열인 RISK_MM 제외)
  
 ### 학습에 사용될 수 있도록 데이터 셋 조정
 
