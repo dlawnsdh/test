@@ -10,6 +10,8 @@
 - 이미지 변환 문제들에 대한 일반적인 framework의 필요성
 - blurry image가 아닌 realistic한 이미지를 얻기위해 CGAN을 사용하여 진짜같은 이미지를 구현한다.
 
-## GAN
+## GAN(Generative Adversarial Networks)
 
+- Generative model(생성 모델)
+- 실존하진 않지만 있을 법한 이미지를 생성하는 모델
 - 
