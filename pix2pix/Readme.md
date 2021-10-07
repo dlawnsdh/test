@@ -37,3 +37,12 @@ objective function
 
 학습과정
 ![image](https://user-images.githubusercontent.com/77203609/136322143-c33234ce-7a5d-4750-814a-563822860e83.png)
+<br>
+
+## pix2pix
+
+- 이미지 자체를 조건으로 받는 cGAN의 한 유형
+### Method
+
+![image](https://user-images.githubusercontent.com/77203609/136323042-706bbaef-9bf0-4161-a869-6694cf680f9f.png)
+- 판별자는 생성된 이미지와 조건을 한 쌍으로 묶은 데이터를 입력받아 진짜 가짜인지를 판별한다.
