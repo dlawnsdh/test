@@ -79,4 +79,15 @@
 
 #### U-Net
 
--
+- patch
+
+![image](https://user-images.githubusercontent.com/77203609/136340096-6c74e41c-8e6f-4b4a-bae8-3e7e17945cc3.png)
+
+- U-Net 구조
+
+![image](https://user-images.githubusercontent.com/77203609/136340377-74739b6e-abd7-474c-8ec2-e00f87f69d84.png)
+
+- 회색 화살표가 skip connection(decoding 영역의 feature map이 encoding 영역의 feature map과 대응된다.)
+
+
+
