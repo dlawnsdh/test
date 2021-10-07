@@ -71,3 +71,12 @@
    
 
 ### Network architectures
+
+![image](https://user-images.githubusercontent.com/77203609/136339669-222e80fe-0346-4d26-b4d1-8f03069d4dfe.png)
+
+- U-Net 구조를 이용한 skip connection 기법 사용
+- discriminator에서는 PatchGAN 분류 모델을 사용
+
+#### U-Net
+
+-
