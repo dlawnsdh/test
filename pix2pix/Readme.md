@@ -20,8 +20,8 @@
 - 통계적인 분포 자체를 학습하여 원본 데이터의 분포를 근사할 수 있도록 한다.
 ### 생성자(generator)와 판별자(discriminator)
 - GAN은 생성자와 판별자로 구성
-- objective function
+objective function
 ![image](https://user-images.githubusercontent.com/77203609/136321204-d89fdd02-2693-4548-b97a-47c70230955a.png)
--학습과정
+학습과정
 ![image](https://user-images.githubusercontent.com/77203609/136321272-0d542005-237a-4de6-abac-dd73e329f8fa.png)
 
