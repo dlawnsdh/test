@@ -98,6 +98,6 @@
 
 ![image](https://user-images.githubusercontent.com/77203609/136342384-84915129-8ad0-49b6-aff3-ec5aaf505f22.png)
 
-- skip connecttion을 사용했을 때와 사용하지 않았을때의 비교
+- skip connecttion을 사용했을 때와 사용하지 않았을 때의 비교
 - FCN-scores
 
