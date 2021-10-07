@@ -88,6 +88,6 @@
 ![image](https://user-images.githubusercontent.com/77203609/136340377-74739b6e-abd7-474c-8ec2-e00f87f69d84.png)
 
 - 회색 화살표가 skip connection(decoding 영역의 feature map이 encoding 영역의 feature map과 대응된다.)
-
+- PatchGAN은 이미지 전체에 대하여 진위여부를 판별하지 않고 패치 단위로 진위여부를 판별하는 모델
 
 
