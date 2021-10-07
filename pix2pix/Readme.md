@@ -17,4 +17,11 @@
 ![image](https://user-images.githubusercontent.com/77203609/136320785-900ade9e-43a1-472a-8430-e01ce8b83797.png)
 ![image](https://user-images.githubusercontent.com/77203609/136320818-4c362067-b866-4d99-b0e7-1e46e349fc87.png)
 
-- 통계적인 분포 자체를 학습하여 이미지를 만들어 낸다.
+- 통계적인 분포 자체를 학습하여 원본 데이터의 분포를 근사할 수 있도록 한다.
+### 생성자(generator)와 판별자(discriminator)
+- GAN은 생성자와 판별자로 구성
+- objective function
+![image](https://user-images.githubusercontent.com/77203609/136321204-d89fdd02-2693-4548-b97a-47c70230955a.png)
+-학습과정
+![image](https://user-images.githubusercontent.com/77203609/136321272-0d542005-237a-4de6-abac-dd73e329f8fa.png)
+
