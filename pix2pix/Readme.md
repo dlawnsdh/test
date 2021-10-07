@@ -59,4 +59,6 @@ objective function
 ![image](https://user-images.githubusercontent.com/77203609/136337472-bdd29951-1460-4803-9e82-309bfc932099.png)
 - 실제 데이터와 비슷하게 만들기 위한 L1
 
+![image](https://user-images.githubusercontent.com/77203609/136337788-bcc34cd0-a3b9-4dd8-8676-0103f664826e.png)
+- final objective
 ### Network architectures
