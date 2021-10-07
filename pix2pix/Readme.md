@@ -90,4 +90,14 @@
 - 회색 화살표가 skip connection(decoding 영역의 feature map이 encoding 영역의 feature map과 대응된다.)
 - PatchGAN은 이미지 전체에 대하여 진위여부를 판별하지 않고 패치 단위로 진위여부를 판별하는 모델
 
+### 성능 평가
+
+![image](https://user-images.githubusercontent.com/77203609/136342218-8fe65486-8f77-4fc3-bf0d-a3c90ffcf1e8.png)
+
+- L1 + cGAN의 결과가 가장 자연스럽다.
+
+![image](https://user-images.githubusercontent.com/77203609/136342384-84915129-8ad0-49b6-aff3-ec5aaf505f22.png)
+
+- skip connecttion을 사용했을 때와 사용하지 않았을때의 비교
+- FCN-scores
 
