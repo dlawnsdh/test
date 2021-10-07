@@ -58,6 +58,7 @@ objective function
 ![image](https://user-images.githubusercontent.com/77203609/136337185-b9f4e77e-6492-45d6-b45e-fd5a33d6703e.png)
 
 2. 실제 데이터와 비슷하게 만들기 위한 L1
+
 ![image](https://user-images.githubusercontent.com/77203609/136337472-bdd29951-1460-4803-9e82-309bfc932099.png)
 
 3. final objective
