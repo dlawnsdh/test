@@ -28,3 +28,12 @@ objective function
 학습과정
 ![image](https://user-images.githubusercontent.com/77203609/136321272-0d542005-237a-4de6-abac-dd73e329f8fa.png)
 
+### Conditional GAN
+
+- 원하는 데이터를 만들어낼 수 있도록 조건을 추가하는 모델
+
+objective function
+![image](https://user-images.githubusercontent.com/77203609/136322021-e7d4143e-03a1-47f7-bbc8-dd92dac04d81.png)
+
+학습과정
+![image](https://user-images.githubusercontent.com/77203609/136322143-c33234ce-7a5d-4750-814a-563822860e83.png)
