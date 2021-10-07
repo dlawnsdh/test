@@ -54,11 +54,12 @@ objective function
 - GAN은 blurry한 결과가 나오지 않지만 정답과 유사하게 생성하기 위해서 L1을 추가한다.
 
 ![image](https://user-images.githubusercontent.com/77203609/136337185-b9f4e77e-6492-45d6-b45e-fd5a33d6703e.png)
-  - 실제로 있을법한 이미지 생성
+    - 실제로 있을법한 이미지 생성
 
 ![image](https://user-images.githubusercontent.com/77203609/136337472-bdd29951-1460-4803-9e82-309bfc932099.png)
-  - 실제 데이터와 비슷하게 만들기 위한 L1
+    - 실제 데이터와 비슷하게 만들기 위한 L1
 
 ![image](https://user-images.githubusercontent.com/77203609/136337788-bcc34cd0-a3b9-4dd8-8676-0103f664826e.png)
-  - final objective
+    - final objective
+
 ### Network architectures
