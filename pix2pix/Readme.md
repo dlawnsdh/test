@@ -53,7 +53,6 @@ objective function
 - objective function은 GAN의 성능을 향상시키기 위해 L1 손실 함수를 cGAN과 함꼐 사용한다.
 - GAN은 blurry한 결과가 나오지 않지만 정답과 유사하게 생성하기 위해서 L1을 추가한다.
 
-objective function
 ![image](https://user-images.githubusercontent.com/77203609/136337185-b9f4e77e-6492-45d6-b45e-fd5a33d6703e.png)
 - 실제로 있을법한 이미지 생성
 
