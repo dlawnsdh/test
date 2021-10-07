@@ -23,6 +23,7 @@
 
 objective function
 ![image](https://user-images.githubusercontent.com/77203609/136321204-d89fdd02-2693-4548-b97a-47c70230955a.png)
+
 학습과정
 ![image](https://user-images.githubusercontent.com/77203609/136321272-0d542005-237a-4de6-abac-dd73e329f8fa.png)
 
