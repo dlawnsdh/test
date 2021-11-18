@@ -77,4 +77,4 @@
 ![image](https://user-images.githubusercontent.com/77203609/142387861-655c7997-9e03-4d52-b954-9135bba4572e.png)
 
 ![image](https://user-images.githubusercontent.com/77203609/142387951-f7710f57-dce5-4c5d-9cec-053f84f4f54f.png)
-
+(Identity Loss를 함께 사용했을 때)
