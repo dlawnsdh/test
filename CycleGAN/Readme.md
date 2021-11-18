@@ -37,12 +37,14 @@
 - G : 타겟 도메인 Y에 가까운 이미지 G(x)를 생성하는 Generator
 - Dy: 생성된 이미지 G(x)와 실제의 샘플 y를 식별하는 Discriminator
   (Dx에 대해서도 마찬가지)
+<br>
   
 ### Cycle Consistency Loss
 
 ![image](https://user-images.githubusercontent.com/77203609/142381027-9241c6b5-3008-4b63-8742-2b9f9966d029.png)
 
 - F(G(x)), G(F(y))(변환과 역변환)을 거친 이미지가 원본과 최대한 유사할 수 있도록 학습을 진행한다.
+<br>
 
 ### Full Objective
 
@@ -63,3 +65,6 @@
 - Replay buffer: 생성자(G)가 만든 이전의 50개의 데이터를 저장해 두고, 이를 이용해 판별자(D)를 학습시킨다.
 <br>
 
+## Evaluation
+
+![image](https://user-images.githubusercontent.com/77203609/142386808-afdf8ef3-6e88-4194-a8c1-c84be61d69ce.png)
