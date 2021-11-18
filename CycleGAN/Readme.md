@@ -21,7 +21,7 @@
 
 - 프레임워크
 - adversarial loss term만으로는 X -> Y로의 유의미한 매핑이 보장되지 않기에 cycle consistent
-- 
+
 ![image](https://user-images.githubusercontent.com/77203609/142379927-c2718a94-3e76-4891-859e-625f7c8c7c9e.png)
 
 (한 도메인에서 다른 도메인으로 변환 후 다시 역변환을 하면 원래의 도메인으로 돌아와랴 함)을 만족시키도록
