@@ -28,6 +28,8 @@
 - cycle consistency loss term을 함께 사용한다.
 <br>
 
+## Formulation
+
 ### Adversarial Loss
 
 ![image](https://user-images.githubusercontent.com/77203609/142380977-88512406-c4af-4479-adc6-65ff53e4d61a.png)
@@ -48,3 +50,6 @@
 
 - adversarial loss: target domain에 있을법한 이미지 생성한다.
 - cycle consistency loss: 입력과 매칭되는 translation결과를 찾는다.
+<br>
+
+## architectures
