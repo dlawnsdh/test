@@ -72,3 +72,7 @@
 
 - paired dataset으로 학습을 진행하는 pix2pix와 비교할 만한 성능을 보인다.
 
+- 색상 정보를 유지해야 할 때는 추가적으로 Identity Loss를 사용한다. 
+![image](https://user-images.githubusercontent.com/77203609/142387861-655c7997-9e03-4d52-b954-9135bba4572e.png)
+
+
