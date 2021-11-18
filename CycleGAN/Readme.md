@@ -26,6 +26,7 @@
 
 (한 도메인에서 다른 도메인으로 변환 후 다시 역변환을 하면 원래의 도메인으로 돌아와야 함)을 만족시키도록
 - cycle consistency loss term을 함께 사용한다.
+<br>
 
 ### Adversarial Loss
 
@@ -34,13 +35,16 @@
 - G : 타겟 도메인 Y에 가까운 이미지 G(x)를 생성하는 Generator
 - Dy: 생성된 이미지 G(x)와 실제의 샘플 y를 식별하는 Discriminator
   (Dx에 대해서도 마찬가지)
+  
 ### Cycle Consistency Loss
 
 ![image](https://user-images.githubusercontent.com/77203609/142381027-9241c6b5-3008-4b63-8742-2b9f9966d029.png)
 
--
+- F(G(x)), G(F(y))(변환과 역변환)을 거친 이미지가 원본과 최대한 유사할 수 있도록 학습을 진행한다.
+
 ### Full Objective
 
 ![image](https://user-images.githubusercontent.com/77203609/142381083-b70102e4-2fb7-4e65-a29f-b986d06e7297.png)
 
--
+- adversarial loss: target domain에 있을법한 이미지 생성한다.
+- cycle consistency loss: 입력과 매칭되는 translation결과를 찾는다.
