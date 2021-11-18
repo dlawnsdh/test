@@ -52,4 +52,14 @@
 - cycle consistency loss: 입력과 매칭되는 translation결과를 찾는다.
 <br>
 
-## architectures
+### architectures
+
+- 잔여 블록(residual block)을 활용하는 아키텍쳐 및 instance normalization을 사용한다.
+- 이미지를 패치 단위로 진위 여부를 판별하는 discriminator를 사용한다.
+
+### Training details
+
+- Least-squares loss: cross-entropy 기반의 loss 대신 MSE 기반의 loss 사용
+- Replay buffer: 생성자(G)가 만든 이전의 50개의 데이터를 저장해 두고, 이를 이용해 판별자(D)를 학습시킨다.
+<br>
+
