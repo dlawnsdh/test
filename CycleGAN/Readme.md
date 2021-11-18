@@ -68,3 +68,7 @@
 ## Evaluation
 
 ![image](https://user-images.githubusercontent.com/77203609/142386808-afdf8ef3-6e88-4194-a8c1-c84be61d69ce.png)
+![image](https://user-images.githubusercontent.com/77203609/142386937-71890a4b-3efc-4b48-bf70-303f4060906f.png)
+
+- paired dataset으로 학습을 진행하는 pix2pix와 비교할 만한 성능을 보인다.
+
