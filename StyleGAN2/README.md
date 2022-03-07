@@ -74,7 +74,7 @@ PPL 예시
 
 - 물방울 모양의 artifact가 feature map에 항상 존재하며 64x64부터 점점 강하게 나타난다 
 - 모든 StyleGAN 이미지에 존재하였고, 만일 artifact가 생기지 않는다면 아예 잘못된 이미지가 생성
-- 저자는 AdaIN 떄문에 artifact가 발생한다고 추정
+- 저자는 AdaIN 떄문에 artifact가 발생한다고 추정(각 feature map의 mean/std를 개별적으로 정규화하기 때문에 서로 연관된 feature들의 정보가 소실됨)
 <br>
 
 - 따라서 AdaIN 방식을 사용하지 않는 정규화를 제안
@@ -87,7 +87,10 @@ PPL 예시
 
 - b -> c
 1. 저자들은 표준편차만으로도 충분하다고 평가했고 이에따라 평균값으로는 modulation을 진행하지 않았다
-
+2. style block의 외부에서 feature map들의 값을 변경하기 위해 정규화를 진행하고 noise를 넣어주는 형태로 바꾸었다
+- c -> d
+1. convolution을 거친 feature map에 바로 modulation을 진행하지 않고 weight값에 대해 modulation을 진행한다
+   따라서 직접적으로 정규화가아닌 feaure map의 statistics를 예측하는 추정 통계(estimated statistics)로 정규화를  
 
 ### Phase artifacts 
 
