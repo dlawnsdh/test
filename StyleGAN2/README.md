@@ -12,5 +12,4 @@
 - 생성된 이미지의 분포가 원본 이미지의 분포에 얼마나 가까운지 측정하는 방법
 
 ![image](https://user-images.githubusercontent.com/77203609/156970731-e56ac14e-c782-41d8-9c98-3fbd21c25ddd.png)
-
-- FID의 
+ FID의 정의 
