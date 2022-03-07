@@ -103,8 +103,18 @@ PPL 예시
 
 ![image](https://user-images.githubusercontent.com/77203609/157002815-830448c0-c304-4ff6-917d-830c2814ddb3.png)
 
-- 위의 식에서 demodulation으로 얻어지는 w''값으로 convolution을 하면 AdaIN을 대체하면서 droplet artifacts를 제거할 수 
+- 위의 식에서 demodulation으로 얻어지는 w''값으로 convolution을 하면 AdaIN을 대체하면서 droplet artifacts를 제거할 수 있다
  
-### Phase artifacts 
+### Phase artifacts  
+
+![image](https://user-images.githubusercontent.com/77203609/157003883-619a1290-1637-425b-9bc0-78f5f962f9fc.png)
+
+- 치아나 눈같은 요소들이 부드럽게 이동하지 않는 경우가 많다(고정되어 있으려는 성향이 강하다)
+- Progressive Growing에 의해 발생하는 현상이므로 저자는 다른 방법을 사용하여 고해상도 이미지를 만드는 방법을 제시했다
+
+![image](https://user-images.githubusercontent.com/77203609/157004795-66ec22e3-a76d-4ca6-b706-ee3e3a9e63e9.png)
+
+- 모든 조합을 실험해본 결과 b타입 생성자와 c타입 판별자를 사용했을 때 PPL과 FID를 개선하여 이 조합을 선택했다
+
 
 
