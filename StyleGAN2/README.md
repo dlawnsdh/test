@@ -99,8 +99,12 @@ PPL 예시
 
 ![image](https://user-images.githubusercontent.com/77203609/157001920-4c0b992a-1ce1-41b0-9bc4-1d8947c3720d.png)
 
-- output activation의 std
+- output activation의 std는 위와 같다
 
+![image](https://user-images.githubusercontent.com/77203609/157002815-830448c0-c304-4ff6-917d-830c2814ddb3.png)
+
+- 위의 식에서 demodulation으로 얻어지는 w''값으로 convolution을 하면 AdaIN을 대체하면서 droplet artifacts를 제거할 수 
+ 
 ### Phase artifacts 
 
 
