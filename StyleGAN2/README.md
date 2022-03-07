@@ -90,7 +90,15 @@ PPL 예시
 2. style block의 외부에서 feature map들의 값을 변경하기 위해 정규화를 진행하고 noise를 넣어주는 형태로 바꾸었다
 - c -> d
 1. convolution을 거친 feature map에 바로 modulation을 진행하지 않고 weight값에 대해 modulation을 진행한다
-   따라서 직접적으로 정규화가아닌 feaure map의 statistics를 예측하는 추정 통계(estimated statistics)로 정규화를  
+   따라서 직접적으로 정규화가아닌 feaure map의 statistics를 예측하는 추정 통계(estimated statistics)로 정규화를 진행한다
+
+![image](https://user-images.githubusercontent.com/77203609/157001654-5afa276c-04c1-4a31-b2c6-2d14a64754bb.png)
+
+2. weight값에 scailng fator를 곱해주어 modulation을 해주고 
+3. 정규화까지 진행하기위해 모든 input activation이 unit std를 따르는 i.i.d random variable이라고 가정하면 
+![image](https://user-images.githubusercontent.com/77203609/157001920-4c0b992a-1ce1-41b0-9bc4-1d8947c3720d.png)
+
+- output activation의 std
 
 ### Phase artifacts 
 
