@@ -114,10 +114,4 @@ PPL 예시
 
 ![image](https://user-images.githubusercontent.com/77203609/157004795-66ec22e3-a76d-4ca6-b706-ee3e3a9e63e9.png)
 
-- 모든 조합을 실험해본 결과 b타입 생성자와 c타입 판별자를 사용했을 때 PPL과 FID를 개선하여 이 조합을 선택했다
-
-## Effects of path length regularization
-
-- PPL이 작을수록 좋은 이미지를 만들수 있기 떄문에 PPL이 낮아지는 방향으로 학습을 진행
-
-### 
+- 모든 조합을 실험해본 결과 b타입 생성자와 c타입 판별자를 사용했을 때 PPL과 FID를 개선하여 이 조합을 선택했다 
