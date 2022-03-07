@@ -38,4 +38,25 @@ PPL 예시
 
 - 4x4를 시작으로 1024x1024이미지를 생성해내기까지 점진적으로 네트워크를 붙여나가며 학습한다
 
-### AdaIN layer
+### AdaIN 
+
+- style transfer의 정규화(normalization) 방법
+- content input인 x와 style input인 y를 평균과 표준편차로 정규화 한다
+- 오직 content와 style 이미지의 통계로만 수행되며 원하는 데이터로부터 style을 가져오기 때문에 학습 파라미터는 필요치않다
+
+![image](https://user-images.githubusercontent.com/77203609/156984062-5e0fdf3e-9fed-4776-bc3a-9d4d00161e86.png)
+
+- AdaIN 수식, style의 표준편차와 평균 대신 style 벡터 w의 선형변환인 y_s, y_b가 사용된다
+
+### Network architecture
+
+![image](https://user-images.githubusercontent.com/77203609/156984578-f1ebed7c-0388-488f-bee6-4669c510e0c0.png)
+
+- 일반적인 GAN처럼 확률적으로 생성된 잠재 변수(z)를 통해 이미지를 생성하는 것이 아닌 고정된 값의 텐서(초기값이 상수)를 통해 이미지를 생성
+- 잠재 변수인 z를 mapping network를 통해 선형변환을 한 w생성
+- AdaIN layer를 각 layer에 2개씩 두어 더욱 다양한 스타일의 변화를 가능하게 한다
+- random noise를 각 layer에 추가해 stochastic variation(확률적 다양성)을 만든다
+
+
+
+
