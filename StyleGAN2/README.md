@@ -96,6 +96,7 @@ PPL 예시
 
 2. weight값에 scailng fator를 곱해주어 modulation을 해주고 
 3. 정규화까지 진행하기위해 모든 input activation이 unit std를 따르는 i.i.d random variable이라고 가정하면 
+
 ![image](https://user-images.githubusercontent.com/77203609/157001920-4c0b992a-1ce1-41b0-9bc4-1d8947c3720d.png)
 
 - output activation의 std
