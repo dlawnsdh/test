@@ -75,6 +75,7 @@ PPL 예시
 - 물방울 모양의 artifact가 feature map에 항상 존재하며 64x64부터 점점 강하게 나타난다 
 - 모든 StyleGAN 이미지에 존재하였고, 만일 artifact가 생기지 않는다면 아예 잘못된 이미지가 생성
 - 저자는 AdaIN 떄문에 artifact가 발생한다고 추정
+<br>
 
 - 따라서 AdaIN 방식을 사용하지 않는 정규화를 제안
 
