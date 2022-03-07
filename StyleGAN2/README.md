@@ -81,7 +81,12 @@ PPL 예시
 
 ![image](https://user-images.githubusercontent.com/77203609/156997920-3bddf324-938d-4aeb-8b22-c3d87c630cec.png)
 
+-디테일한 StyleGAN의 구조
+
 ![image](https://user-images.githubusercontent.com/77203609/156997953-b99e7d86-eaf0-4e59-8246-1b1162ba0f4a.png)최종 방식은 d
+
+- b -> c
+1. 저자들은 표준편차만으로도 충분하다고 평가했고 이에따라 평균값으로는 modulation을 진행하지 않았다
 
 
 ### Phase artifacts 
