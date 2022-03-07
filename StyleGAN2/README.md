@@ -66,6 +66,23 @@ PPL 예시
 
 ## StyleGAN2에서 보완한 StyleGAN의 문제점
 
-### 
+### Droplet artifacts
+
+![image](https://user-images.githubusercontent.com/77203609/156996095-eb515a19-b37f-4146-ba4c-271b1470c188.png)
+
+![image](https://user-images.githubusercontent.com/77203609/156996125-33ce907d-74fa-4a48-aa1d-a4202b43bbda.png)
+
+- 물방울 모양의 artifact가 feature map에 항상 존재하며 64x64부터 점점 강하게 나타난다 
+- 모든 StyleGAN 이미지에 존재하였고, 만일 artifact가 생기지 않는다면 아예 잘못된 이미지가 생성
+- 저자는 AdaIN 떄문에 artifact가 발생한다고 추정
+
+- 따라서 AdaIN 방식을 사용하지 않는 정규화를 제안
+
+![image](https://user-images.githubusercontent.com/77203609/156997920-3bddf324-938d-4aeb-8b22-c3d87c630cec.png)
+
+![image](https://user-images.githubusercontent.com/77203609/156997953-b99e7d86-eaf0-4e59-8246-1b1162ba0f4a.png)최종 방식은 d
+
+
+### Phase artifacts 
 
 
