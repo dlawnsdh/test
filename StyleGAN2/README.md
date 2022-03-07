@@ -57,6 +57,14 @@ PPL 예시
 - AdaIN layer를 각 layer에 2개씩 두어 더욱 다양한 스타일의 변화를 가능하게 한다
 - random noise를 각 layer에 추가해 stochastic variation(확률적 다양성)을 만든다
 
+### Mixing Regularization
 
+- style에 사용된 두 잠재 변수를 학습하는 동안 혼합하는 것 
+- 각각의 layer에서 사용된 w벡터를 혼합함으로서 여러 이미지를 만들수 있다
+
+
+## StyleGAN2에서 보완한 StyleGAN의 문제점
+
+### 
 
 
